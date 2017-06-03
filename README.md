@@ -4,7 +4,7 @@
 
 ## Examples
 <p align="center">
-  <img width="700px" src="http://omfocc16a.bkt.clouddn.com/fullCalendar.png">
+  <img width="700px" src="http://omfocc16a.bkt.clouddn.com/fullCalendar1.png">
 </p>
 
 <p align="center">
