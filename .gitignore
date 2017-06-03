@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+TODO.md
+lib
+docs/_book
+examples/**/build.js
+.idea
+/**/.svn
+/**/*.log
