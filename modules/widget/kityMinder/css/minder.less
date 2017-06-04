@@ -1,6 +1,7 @@
 .minder-container{
 	width: 100%;
 	height: 100%;
+	position: relative;
 	.tools{
 		width: 100%;
 		height: 39px;
@@ -253,6 +254,51 @@
 
 
 
+
+.edit_box{
+	position: absolute;
+	left: 0;
+	top: 0;
+	
+	.receiver {
+		background: #fff;
+		outline: 0;
+		box-shadow: 0 0 20px rgba(0,0,0,.5);
+		padding: 3px 5px;
+		margin-left: -3px;
+		margin-top: -5px;
+		max-width: 300px;
+		width: auto;
+		font-size: 14px;
+		line-height: 1.4em;
+		min-height: 1.4em;
+		box-sizing: border-box;
+		overflow: hidden;
+		word-break: break-all;
+		word-wrap: break-word;
+		border: none;
+		-webkit-user-select: text;
+		pointer-events: none;
+		opacity: 0;
+		min-width: 18px;
+		z-index: -1000
+	}
+
+	.receiver.debug {
+		opacity: 1;
+		outline: green solid 1px;
+		background: 0 0;
+		z-index: 0
+	}
+
+	.receiver.input {
+		pointer-events: all;
+		opacity: 1;
+		z-index: 999;
+		background: #fff;
+		outline: 0
+	}
+}
 
 
 

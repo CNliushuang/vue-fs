@@ -3,33 +3,33 @@
         <div class="state main active">
             <div class="ring-shape" style="margin-top: -90px; margin-left: -90px; height: 180px; width: 180px;"></div>
             <div class="center">
-                <div class="button enabled selected">
+                <div class="button enabled selected" @click="minderOperate('Edit')">
                     <span class="label">编辑</span>
                     <span class="key">F2</span>
                 </div>
             </div>
             <div class="ring">
-                <div class="button enabled" style="left: 5.51091e-15px; top: -90px;">
+                <div class="button enabled" @click="minderOperate('ArrangeUp')" style="left: 5.51091e-15px; top: -90px;">
                     <span class="label">前移</span>
                     <span class="key">Alt+Up</span>
                 </div>
-                <div class="button enabled" style="left: 77.9423px; top: -45px;">
+                <div class="button enabled" @click="minderOperate('AppendChildNode')" style="left: 77.9423px; top: -45px;">
                     <span class="label">下级</span>
                     <span class="key">Tab</span>
                 </div>
-                <div class="button enabled" style="left: 77.9423px; top: 45px;">
+                <div class="button enabled" @click="minderOperate('AppendSiblingNode')" style="left: 77.9423px; top: 45px;">
                     <span class="label">同级</span>
                     <span class="key">Enter</span>
                 </div>
-                <div class="button enabled" style="left: 5.51091e-15px; top: 90px;">
+                <div class="button enabled" @click="minderOperate('ArrangeDown')" style="left: 5.51091e-15px; top: 90px;">
                     <span class="label">后移</span>
                     <span class="key">Alt+Down</span>
                 </div>
-                <div class="button enabled" style="left: -77.9423px; top: 45px;">
+                <div class="button enabled" @click="minderOperate('RemoveNode')" style="left: -77.9423px; top: 45px;">
                     <span class="label">删除</span>
                     <span class="key">Delete</span>
                 </div>
-                <div class="button enabled" style="left: -77.9423px; top: -45px;">
+                <div class="button enabled" @click="minderOperate('AppendParentNode')" style="left: -77.9423px; top: -45px;">
                     <span class="label">上级</span>
                     <span class="key">Shift+Tab</span>
                 </div>
@@ -177,6 +177,10 @@ export default{
     	hideMenu(){
             this.$emit('hideRightMenu');
         },
+        minderOperate(type){
+            this.$emit("minderOperate",type);
+            this.$emit('hideRightMenu');
+        }
     },
     mounted(){
         this._closeEvent = EventListener.listen(window, 'click', (e)=> {
