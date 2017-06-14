@@ -11,10 +11,12 @@ Vue.config.debug = true
 /*配置路由*/
 import Calendar from './components/Calendar.vue'
 import Minder from './components/Minder.vue'
+import Video from './components/Video.vue'
 Vue.use(VueRouter)
 const routes = [
   { path: '/index', component: Calendar },
   { path: '/minder', component: Minder },
+  { path: '/video', component: Video },
   { path: '*', component: Calendar },
 
 ]

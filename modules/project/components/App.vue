@@ -11,6 +11,9 @@
               <li :class="{
                 'active':(path.indexOf('/minder') >= 0)
                 }"><router-link to="/minder">Minder</router-link></li>
+              <!-- <li :class="{
+                'active':(path.indexOf('/video') >= 0)
+                }"><router-link to="/video">Video</router-link></li> -->
             </ul>
           </div>
         </div>

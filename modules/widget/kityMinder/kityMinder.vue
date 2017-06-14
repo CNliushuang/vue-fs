@@ -10,7 +10,7 @@
             <a @click="zoomOut" role="button" class="btn btn-link"><span class="glyphicon glyphicon-zoom-out" aria-hidden="true"></span> 缩小</a>
 		</div>
 		<div id="minder-view"></div>
-        <minder-hotbox :right-menu="rightMenu" @hideRightMenu="goHideRightMenu" @minderOperate="goOperateMinder"></minder-hotbox>
+        <minder-hotbox :right-menu="rightMenu" @hideRightMenu="goHideRightMenu" @minderOperate="goOperateMinder" @minderPriority="goOperateMinderPriority" @minderProgress="goOperateMinderProgress"></minder-hotbox>
         <div class="edit_box" v-show="isEdit" :style="{left: editLeft+'px',top: editTop+'px'}">
             <div id="edit_input" @keydown.enter="goChangeText" ref="editbox" contenteditable="true" tabindex="-1" :class="{
                 'receiver':true,
@@ -205,6 +205,18 @@ export default{
         minderOperate(type){
             var km = window.km;
             km.execCommand(type);
+        },
+        goOperateMinderPriority(pri){
+            var km = window.km;
+            var node = km.getSelectedNode();
+            node.data.priority = pri;
+            km.refresh();
+        },
+        goOperateMinderProgress(progress){
+            var km = window.km;
+            var node = km.getSelectedNode();
+            node.data.progress = progress;
+            km.refresh();
         }
     },
     computed:{
